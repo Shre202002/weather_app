@@ -1,20 +1,10 @@
 "use client";
 import { commandIcon } from '@/app/utils/icon';
 import { Button } from '@/components/ui/button';
+import { Command,  CommandInput,  CommandItem, } from "@/components/ui/command"
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
-
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-    CommandSeparator,
-    CommandShortcut,
-} from "@/components/ui/command"
-
-import { Dialog, DialogContent, DialogTrigger } from '@radix-ui/react-dialog';
+// import { Dialog, DialogContent, DialogTrigger } from '@radix-ui/react-dialog';
 import React from 'react'
 
 export const SearchDialog = () => {
@@ -39,7 +29,11 @@ export const SearchDialog = () => {
 
                 <DialogContent className="p-0">
                     <Command className=" rounded-lg border shadow-md">
-                       
+                        <CommandInput
+                            placeholder="Type a command or search..."/>
+                            <ul className='px-3 pb-2'>
+                                <p className='p-2 text-sm text-muted-foreground'>Suggestions</p>
+                            </ul>
                     </Command>
                 </DialogContent>
 
